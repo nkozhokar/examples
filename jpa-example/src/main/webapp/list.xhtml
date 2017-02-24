@@ -9,12 +9,14 @@
 
 </h:head>
 <h:body>
-    <h:form>
-        <h:inputText value="#{loginBeam.login}"/>
-        <br/>
-        <h:inputText value="#{loginBeam.password}"/>
-        <br/>
-        <h:commandLink value="Login" action="#{loginBeam.checkPassword()}"/>
-    </h:form>
+    <h:dataTable value="#{exampleCDI.allUsers}" var="user">
+        <h:column>
+            <h:outputText value="#{user.login}" />
+        </h:column>
+
+        <h:column>
+            <h:outputText value="#{user.password}" />
+        </h:column>
+    </h:dataTable>
 </h:body>
 </html>
